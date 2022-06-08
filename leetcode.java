@@ -13,15 +13,27 @@ class LeetCode {
 
 
     public static int romanToInt(String roman){
+
+        //get lenght of string
         int lenght=roman.length();
         int result=0;
+
+        //using for from higher to lower
         for(int i=lenght-1;i>=0;i--){
+
+            //check minus index
             int k=i-1;
+            
+            //check I
             if(roman.charAt(i)=='I'){
                 result+=1;
             }
+
+            //check V
             else if(roman.charAt(i)=='V'){
                 result+=5;
+
+                //check minus value
                 if(k>=0){
                   if(roman.charAt(k)=='I'){
                       result-=1;
@@ -29,8 +41,12 @@ class LeetCode {
                   }
                 }
             }
+
+            //check X
             else if(roman.charAt(i)=='X'){
                 result+=10;
+
+                //check minus value
                 if(k>=0){
                   if(roman.charAt(k)=='I'){
                       result-=1;
@@ -42,8 +58,12 @@ class LeetCode {
                   }
               }
             }
+
+            //check L
             else if(roman.charAt(i)=='L'){
                 result+=50;
+
+                //check minus value
                 if(k>=0){
                   if(roman.charAt(k)=='I'){
                       result-=1;
@@ -59,8 +79,12 @@ class LeetCode {
                   }
               }
             }
+
+            //check C
             else if(roman.charAt(i)=='C'){
                 result+=100;
+
+                //check minus value
                 if(k>=0){
                   if(roman.charAt(k)=='I'){
                       result-=1;
@@ -80,8 +104,12 @@ class LeetCode {
                   }
               }
             }
+
+            //check D
             else if(roman.charAt(i)=='D'){
                 result+=500;
+
+                //check minus value
                 if(k>=0){
                   if(roman.charAt(k)=='I'){
                       result-=1;
@@ -105,8 +133,12 @@ class LeetCode {
                   }
               }
             }
+
+            //check M
             else if(roman.charAt(i)=='M'){
                 result+=1000;
+
+                //check minus value
                 if(k>=0){
                   if(roman.charAt(k)=='I'){
                       result-=1;
@@ -134,6 +166,7 @@ class LeetCode {
                   }
               }
             }
+
             else{
                 System.out.println("Not suitable for Roman to Int");
                 return 0;
