@@ -2,10 +2,10 @@
 
 Problem source: https://leetcode.com/problems/roman-to-integer/
 
-For compile
+For compile:
 
 javac leetcode.java
 
-For run
+For run:
 
 java LeetCode
